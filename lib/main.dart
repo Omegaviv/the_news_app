@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
               height: 51,
               width: 51,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(kBorderRadius),
                 color: kLightBlue,
                 image: const DecorationImage(
                   image: NetworkImage("https://cdn3d.iconscout.com/3d/premium/thumb/man-avatar-6299539-5187871.png"),
@@ -58,16 +58,60 @@ class HomeScreen extends StatelessWidget {
               width: 16,
             ),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Welcome Back',
                   style: KPoppinsBold.copyWith(
                     fontSize:SizeConfig.blockSizeHorizontal!*4,
                   ),
-                )
+                ),
+                Text(
+                  'Monday, 3 October',
+                  style: KPoppinsRegular.copyWith(
+                    color: kGrey,
+                    fontSize:SizeConfig.blockSizeHorizontal!*3,
+                  ),
+                ),
               ],
             )
-          ],)
+          ],
+          ),
+          SizedBox(height: 30,),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(kBorderRadius),
+              color: kWhite,
+              boxShadow: [BoxShadow(
+                color: kDarkBlue.withOpacity(0.051),
+                offset: const Offset(0.0,3.0),
+                blurRadius: 24.0,
+                spreadRadius: 0.0,
+              )],
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    style: KPoppinsRegular.copyWith(
+                      color: kBlue,
+                      fontSize:SizeConfig.blockSizeHorizontal!*3,
+                    ),
+                    controller: TextEditingController(),
+                    decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 13,
+                      ),
+                      hintText: 'Search For Article ...',
+
+                    ),
+
+                  ),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
