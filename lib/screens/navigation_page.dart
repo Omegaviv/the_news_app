@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:the_news_app/screens/home_page.dart';
 import 'package:the_news_app/screens/news_detail.dart';
+import 'package:the_news_app/screens/signup.dart';
 
 class NavigationPage extends StatefulWidget {
   const NavigationPage({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class NavigationPage extends StatefulWidget {
 class _NavigationPageState extends State<NavigationPage> {
   int _selectedIndex = 0;
   List<Widget> _widgetOptions = <Widget>[
+    SignUp(),
       HomePage(),
     NewsDetailPage()
   ];
